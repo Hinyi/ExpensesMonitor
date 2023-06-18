@@ -2,7 +2,7 @@
 
 namespace ExpensesMonitor.Domain.Policies;
 
-public record PolicyData(Occasion Occasion)
+public record PolicyData(Occasion Occasion, Gender Gender)
 {
     
 }
