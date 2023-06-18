@@ -7,9 +7,9 @@ namespace ExpensesMonitor.Domain.Exceptions;
 public class ProductAlreadyAddedExceptions : ExpensesMonitorException
 {
     public string ShoppingListName { get; }
-    public ProductName Item { get; }
+    public string Item { get; }
 
-    public ProductAlreadyAddedExceptions(string shoppingListName ,ProductName item) 
+    public ProductAlreadyAddedExceptions(string shoppingListName ,string item) 
         : base($"{shoppingListName} : {item} is already in list")
     {
         ShoppingListName = shoppingListName;
