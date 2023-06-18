@@ -1,3 +1,3 @@
 ﻿namespace ExpensesMonitor.Domain.ValueObjects;
 
-public record TotalPrice();
+public record Gender();
