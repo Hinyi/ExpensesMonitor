@@ -17,3 +17,5 @@ D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\obj\
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\obj\Debug\net7.0\refint\ExpensesMonitor.Infrastructure.dll
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\obj\Debug\net7.0\ExpensesMonitor.Infrastructure.pdb
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\obj\Debug\net7.0\ref\ExpensesMonitor.Infrastructure.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\bin\Debug\net7.0\ExpensesMonitor.Infrastructure.runtimeconfig.json
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Infrastructure\obj\Debug\net7.0\ExpensesMonitor.Infrastructure.genruntimeconfig.cache

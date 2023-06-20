@@ -1,5 +1,6 @@
 ﻿using ExpensesMonitor.Domain;
 using ExpensesMonitor.Domain.Entities;
+using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Shared.Commands;
 
@@ -18,8 +19,8 @@ public class AddProductsToListHandler : ICommandHandler<AddProductsToList>
     {
         var shoppingList = await _repository.GetAsync(command.shoppingListId);
 
-        if (shoppingList is null)
-            throw new Exception();
+        if (shoppingList is null){}
+            //throw new Exception();
 
         var price = new Price(command.price.currency, command.price.amount);
         var shoppingItem = new ProductList(command.name, command.Quantity, price);

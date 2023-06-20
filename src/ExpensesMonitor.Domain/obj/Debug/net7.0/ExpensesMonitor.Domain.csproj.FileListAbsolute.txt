@@ -13,3 +13,5 @@ D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\ne
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\refint\ExpensesMonitor.Domain.dll
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.pdb
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ref\ExpensesMonitor.Domain.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Domain.runtimeconfig.json
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.genruntimeconfig.cache

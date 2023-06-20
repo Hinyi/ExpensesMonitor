@@ -1,7 +1,7 @@
 ﻿using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.ValueObjects;
 
-namespace ExpensesMonitor.Domain;
+namespace ExpensesMonitor.Domain.Repositories;
 
 public interface IShoppingListRepository
 {
