@@ -1,5 +1,6 @@
 ﻿using ExpensesMonitor.Application.Services;
 using ExpensesMonitor.Domain;
+using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Infrastructure.EF.Context;
 using ExpensesMonitor.Infrastructure.EF.Options;
 using ExpensesMonitor.Infrastructure.EF.Repositories;
@@ -13,17 +14,17 @@ namespace ExpensesMonitor.Infrastructure.EF;
 
 internal static class Extensions
 {
-    public static IServiceCollection AddPosteges(this IServiceCollection services,
+    public static IServiceCollection AddPostgres(this IServiceCollection services,
         IConfiguration configuration)
     {
         services.AddScoped<IShoppingListRepository, ShoppingListRepository>();
         services.AddScoped<IShoppingListReadService, ShoppingListReadService>();
 
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
-        services.AddDbContext<ReadDbContext>(ctx =>
-            ctx.UseNpgsql(options.ConnectionString));
-        services.AddDbContext<WriteDbContext>(ctx =>
-            ctx.UseNpgsql(options.ConnectionString));
+        services.AddDbContext<ReadDbContext>(ctoox =>
+            ctoox.UseNpgsql(options.ConnectionString));
+        services.AddDbContext<WriteDbContext>(ctoox =>
+            ctoox.UseNpgsql(options.ConnectionString));
 
         return services;
     }

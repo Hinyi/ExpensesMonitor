@@ -2,7 +2,7 @@
 
 namespace ExpensesMonitor.Shared.Commands;
 
-public class InMemoryCommandDispatcher : ICommandDispatcher
+internal sealed class InMemoryCommandDispatcher : ICommandDispatcher
 {
     private readonly IServiceProvider _serviceProvider;
 

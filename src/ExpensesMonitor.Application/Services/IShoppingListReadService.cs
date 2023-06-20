@@ -1,4 +1,5 @@
-﻿namespace ExpensesMonitor.Application.Services;
+﻿using System.Threading.Tasks;
+namespace ExpensesMonitor.Application.Services;
 
 public interface IShoppingListReadService
 {

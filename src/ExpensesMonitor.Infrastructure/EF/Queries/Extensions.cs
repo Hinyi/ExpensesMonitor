@@ -15,7 +15,7 @@ internal static class Extensions
                 {
                     Name = x.Name,
                     Quantity = x.Quantity,
-                    price = x.price
+                    //price = x.Price
                 })
         };
 }

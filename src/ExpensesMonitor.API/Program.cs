@@ -1,15 +1,19 @@
 using ExpensesMonitor.Application;
 using ExpensesMonitor.Infrastructure;
 using ExpensesMonitor.Shared;
+using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
-var Configuration = builder.Configuration;
+
+var configuration = builder.Configuration;
+IConfiguration conf = builder.Configuration;
 // Add services to the container.
 
-builder.Services.AddControllers();
-
+builder.Services.AddShared();
+builder.Services.AddInfrastructures(conf);
 builder.Services.AddApplication();
-builder.Services.AddInfrastructures(Configuration);
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,10 +27,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseShared();
+
 
 app.UseHttpsRedirection();
-
+app.UseShared();
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();

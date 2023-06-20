@@ -13,7 +13,7 @@ public static class Extensions
     {
         services.AddCommands();
         services.AddSingleton<IShoppingListFactory, ShoppingListFactory>();
-        services.AddShared();
+        // services.AddShared();
 
         services.Scan(x => x.FromAssemblies(typeof(IShoppingListPolicy).Assembly)
             .AddClasses(x => x.AssignableTo<IShoppingListPolicy>())
@@ -22,11 +22,4 @@ public static class Extensions
 
         return services;
     }
-    
-    public static IApplicationBuilder UseApplication(this IApplicationBuilder app)
-    {
-        app.UseShared();
-        return app;
-    }
-
 }

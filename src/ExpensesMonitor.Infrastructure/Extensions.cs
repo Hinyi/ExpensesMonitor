@@ -10,7 +10,7 @@ public static class Extensions
     public static IServiceCollection AddInfrastructures(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddPosteges(configuration);
+        services.AddPostgres(configuration);
         services.AddQueries();
 
         return services;

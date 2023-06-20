@@ -1,5 +1,6 @@
 ﻿using ExpensesMonitor.Domain;
 using ExpensesMonitor.Domain.Entities;
+using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Context;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ internal sealed class ShoppingListRepository : IShoppingListRepository
     }
 
     public async Task<ShoppingList> GetAsync(ShoppingListId id)
-        => _shoppingLists.Include("_items").SingleOrDefault(x => x.Id == id);
+        =>  _shoppingLists.Include("_items").SingleOrDefault(x => x.Id == id);
 
     public async Task AddAsync(ShoppingList shoppingList)
     {

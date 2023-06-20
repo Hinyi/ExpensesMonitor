@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,7 +14,6 @@
       <Folder Include="Commands\RemoveProduct\" />
       <Folder Include="Commands\RemoveShoppingList\" />
       <Folder Include="Commands\UpdateProduct\" />
-      <Folder Include="Exceptions\" />
     </ItemGroup>
 
 </Project>

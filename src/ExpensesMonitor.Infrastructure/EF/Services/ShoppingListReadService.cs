@@ -1,4 +1,5 @@
 ﻿using ExpensesMonitor.Application.Services;
+using ExpensesMonitor.Infrastructure.EF.Context;
 using ExpensesMonitor.Infrastructure.EF.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,9 +9,9 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
 {
     private readonly DbSet<ShoppingListReadModel> _shoppingList;
 
-    public ShoppingListReadService(DbSet<ShoppingListReadModel> shoppingList)
+    public ShoppingListReadService(ReadDbContext context)
     {
-        _shoppingList = shoppingList;
+        _shoppingList = context.ShoppingLists;
     }
 
     public Task<bool> ExistByNameAsync(string name)

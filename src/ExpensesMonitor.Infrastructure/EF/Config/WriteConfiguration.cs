@@ -24,7 +24,7 @@ public class WriteConfiguration : IEntityTypeConfiguration<ShoppingList>
             .HasConversion(shoppingListNameConverter)
             .HasColumnName("Name");
 
-        builder.HasMany(typeof(ProductList), "items");
+        builder.HasMany(typeof(ProductList), "_items");
 
         builder.ToTable("PackingList");
     }
