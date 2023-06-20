@@ -39,3 +39,13 @@ D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\obj\Debug\net7.
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\obj\Debug\net7.0\ExpensesMonitor.API.pdb
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\obj\Debug\net7.0\ExpensesMonitor.API.genruntimeconfig.cache
 D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\obj\Debug\net7.0\ref\ExpensesMonitor.API.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Npgsql.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.API\bin\Debug\net7.0\Scrutor.dll

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExpensesMonitor.Infrastructure.EF.Context;
 
-public class ReadDbContext : DbContext
+internal sealed class ReadDbContext : DbContext
 {
-    private DbSet<ShoppingList> ShoppingLists { get; set; }
+    public DbSet<ShoppingListReadModel> ShoppingLists { get; set; }
 
     public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
     {
