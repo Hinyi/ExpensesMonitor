@@ -1,0 +1,15 @@
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Domain.deps.json
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Domain.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Domain.pdb
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Shared.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\bin\Debug\net7.0\ExpensesMonitor.Shared.pdb
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.csproj.AssemblyReference.cache
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.AssemblyInfoInputs.cache
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.AssemblyInfo.cs
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.csproj.CoreCompileInputs.cache
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.csproj.CopyComplete
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\refint\ExpensesMonitor.Domain.dll
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ExpensesMonitor.Domain.pdb
+D:\Smieci\ProjektyCsharp\ExpensesMonitor\src\ExpensesMonitor.Domain\obj\Debug\net7.0\ref\ExpensesMonitor.Domain.dll

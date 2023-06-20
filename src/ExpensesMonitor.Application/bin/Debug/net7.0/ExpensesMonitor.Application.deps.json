@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ExpensesMonitor.Application/1.0.0": {
+        "dependencies": {
+          "ExpensesMonitor.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ExpensesMonitor.Application.dll": {}
+        }
+      },
+      "ExpensesMonitor.Domain/1.0.0": {
+        "dependencies": {
+          "ExpensesMonitor.Shared": "1.0.0"
+        },
+        "runtime": {
+          "ExpensesMonitor.Domain.dll": {}
+        }
+      },
+      "ExpensesMonitor.Shared/1.0.0": {
+        "runtime": {
+          "ExpensesMonitor.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ExpensesMonitor.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExpensesMonitor.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExpensesMonitor.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
