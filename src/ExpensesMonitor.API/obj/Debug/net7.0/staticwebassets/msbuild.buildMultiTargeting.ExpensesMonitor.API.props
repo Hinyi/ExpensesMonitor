@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ExpensesMonitor.API.props" />
+</Project>

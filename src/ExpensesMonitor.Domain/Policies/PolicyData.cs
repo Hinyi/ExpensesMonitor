@@ -1,8 +1,8 @@
-﻿using ExpensesMonitor.Domain.ValueObjects;
+﻿
 
 namespace ExpensesMonitor.Domain.Policies;
 
-public record PolicyData(Occasion Occasion, Gender Gender)
+public record PolicyData(ValueObjects.Occasion Occasion, Const.Gender Gender)
 {
     
 }

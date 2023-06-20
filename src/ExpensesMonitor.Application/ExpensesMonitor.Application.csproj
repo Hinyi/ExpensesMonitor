@@ -10,4 +10,10 @@
       <ProjectReference Include="..\ExpensesMonitor.Domain\ExpensesMonitor.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Commands\RemoveProduct\" />
+      <Folder Include="Commands\RemoveShoppingList\" />
+      <Folder Include="Commands\UpdateProduct\" />
+    </ItemGroup>
+
 </Project>

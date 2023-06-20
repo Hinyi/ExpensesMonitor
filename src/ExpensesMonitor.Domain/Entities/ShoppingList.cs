@@ -10,9 +10,9 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
     public ShoppingListId Id { get; private set; }
     public ShoppingListName Name { get; private set; }
 
-    private readonly LinkedList<Product> _items = new();
+    private readonly LinkedList<ProductList> _items = new();
 
-    private ShoppingList(Guid id, ShoppingListName name, LinkedList<Product> items)
+    private ShoppingList(ShoppingListId id, ShoppingListName name, LinkedList<ProductList> items)
         : this(id, name)
     {
         _items = items;
@@ -23,7 +23,7 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
         Name = name;
     }
 
-    public void AddItem(Product item)
+    public void AddItem(ProductList item)
     {
         var alreadyExists = _items.Any(x => x.Name == item.Name);
         if (alreadyExists)
@@ -35,7 +35,7 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
         AddEvent(new ProductAdded(this, item));
     }
 
-    public void AddItems(IEnumerable<Product> items)
+    public void AddItems(IEnumerable<ProductList> items)
     {
         foreach (var item in items)
         {
@@ -43,14 +43,14 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
         }
     }
 
-    public void RemoveItem(ProductName itemName)
+    public void RemoveItem(string itemName)
     {
         var item = GetItem(itemName);
         _items.Remove(item);
         AddEvent(new ProductRemoved(this, item));
     }
 
-    private Product GetItem(ProductName itemName)
+    private ProductList GetItem(string itemName)
     {
         var item = _items.SingleOrDefault(x => x.Name == itemName);
 

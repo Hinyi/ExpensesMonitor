@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5W/PiDSFd5gsyUQP8DKs0PPiY/cC0V3y6f4zBnIu42g=",
+  "Source": "ExpensesMonitor.API",
+  "BasePath": "_content/ExpensesMonitor.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
