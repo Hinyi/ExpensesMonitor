@@ -17,6 +17,12 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
     {
         _items = items;
     }
+
+    private ShoppingList()
+    {
+        
+    }
+    
     internal ShoppingList(Guid id, ShoppingListName name)
     {
         Id = id;

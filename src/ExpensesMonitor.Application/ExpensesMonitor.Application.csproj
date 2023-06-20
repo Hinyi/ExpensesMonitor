@@ -14,6 +14,7 @@
       <Folder Include="Commands\RemoveProduct\" />
       <Folder Include="Commands\RemoveShoppingList\" />
       <Folder Include="Commands\UpdateProduct\" />
+      <Folder Include="Exceptions\" />
     </ItemGroup>
 
 </Project>
