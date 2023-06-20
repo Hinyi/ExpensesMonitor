@@ -6,7 +6,7 @@ namespace ExpensesMonitor.Domain;
 public interface IShoppingListRepository
 {
     Task<ShoppingList> GetAsync(ShoppingListId id);
-    Task AddAsync(ProductList productList);
-    Task UpdateAsync(ProductList productList);
-    Task DeleteAsync(ProductList productList);
+    Task AddAsync(ShoppingList shoppingList);
+    Task UpdateAsync(ShoppingList shoppingList);
+    Task DeleteAsync(ShoppingList shoppingList);
 }
