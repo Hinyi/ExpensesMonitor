@@ -1,5 +1,4 @@
 ﻿using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Application.ReadModels;
 using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Config;

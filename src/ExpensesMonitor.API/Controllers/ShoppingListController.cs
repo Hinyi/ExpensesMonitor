@@ -1,7 +1,7 @@
 ﻿using ExpensesMonitor.Application.Commands.AddProductsToList;
 using ExpensesMonitor.Application.Commands.CreateShoppingListWithItems;
 using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Application.Queries.GetShoppingList;
+using ExpensesMonitor.Application.Queries;
 using ExpensesMonitor.Shared.Commands;
 using ExpensesMonitor.Shared.Queries;
 using Microsoft.AspNetCore.Mvc;

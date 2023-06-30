@@ -21,9 +21,7 @@ internal static class Extensions
         services.AddScoped<IShoppingListReadService, ShoppingListReadService>();
 
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
-        services.AddDbContext<ReadDbContext>(ctoox =>
-            ctoox.UseNpgsql(options.ConnectionString));
-        services.AddDbContext<WriteDbContext>(ctoox =>
+        services.AddDbContext<ShoppingListDbContext>(ctoox =>
             ctoox.UseNpgsql(options.ConnectionString));
 
         return services;
