@@ -1,7 +1,7 @@
 ﻿using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Application.ReadModels;
 using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.ValueObjects;
+using ExpensesMonitor.Infrastructure.EF.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;

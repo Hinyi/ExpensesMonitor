@@ -1,9 +1,8 @@
 ﻿using ExpensesMonitor.Application.DTO;
 using ExpensesMonitor.Application.Services;
-using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Shared.Queries;
 
-namespace ExpensesMonitor.Application.Queries.GetShoppingList;
+namespace ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 
 internal sealed class GetShoppingListHandler : IQueryHandler<GetShoppingList, ShoppingListDto>
 {
