@@ -5,8 +5,7 @@ using Gender = ExpensesMonitor.Domain.Const.Gender;
 
 namespace ExpensesMonitor.Application.Commands.CreateShoppingListWithItems;
 
-public record CreateShoppingListWithItems(Guid Id, string Name,
+public record CreateShoppingListWithItems(string Name,
     OccasionWriteModel Occasion, Gender gender) : ICommand;
 
 public record OccasionWriteModel(string occasion);
-    

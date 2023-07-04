@@ -1,4 +1,4 @@
-﻿namespace ExpensesMonitor.Application.DTO;
+﻿namespace ExpensesMonitor.Shared.DTO;
 
 public class ProductListDto
 {

@@ -1,5 +1,4 @@
-﻿using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Domain.Entities;
+﻿using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Config;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +8,7 @@ namespace ExpensesMonitor.Infrastructure.EF.Context;
 public class ShoppingListDbContext : DbContext
 {
     public DbSet<ShoppingList> ShoppingLists { get; set; }
+    public DbSet<ProductList> ProductLists { get; set; }
     //public DbSet<ShoppingListReadModel> ShoppingListsRead { get; set; }
     // public DbSet<ProductList> ProductLists { get; set; }    
 
@@ -19,6 +19,11 @@ public class ShoppingListDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("shopping");
+
+        // modelBuilder.Entity<ProductList>()
+        //     .HasOne(x => x.ShoppingList)
+        //     .WithMany(x => x.Items)
+        //     .HasForeignKey(x => x.Id);
 
         var configuration = new ShoppingListDbConfiguration();
         modelBuilder.ApplyConfiguration<ShoppingList>(configuration);

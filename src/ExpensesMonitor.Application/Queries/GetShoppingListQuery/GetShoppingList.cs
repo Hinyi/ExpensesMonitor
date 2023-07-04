@@ -1,9 +1,9 @@
-﻿using ExpensesMonitor.Application.DTO;
+﻿using ExpensesMonitor.Shared.DTO;
 using ExpensesMonitor.Shared.Queries;
 
-namespace ExpensesMonitor.Application.Queries;
+namespace ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 
-public class GetShoppingList : IQuery<ProductListDto>, IQuery<ShoppingListDto>
+public class GetShoppingList : IQuery<ShoppingListDto>
 {
     public Guid Id { get; set; }
 }

@@ -1,8 +1,11 @@
-﻿using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Application.Queries;
+﻿using System.Linq.Expressions;
+using ExpensesMonitor.Application.Queries.GetShoppingListQuery;
+using ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
 using ExpensesMonitor.Application.Services;
+using ExpensesMonitor.Domain.Entities;
+using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Context;
-using ExpensesMonitor.Infrastructure.EF.Models;
+using ExpensesMonitor.Shared.DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExpensesMonitor.Infrastructure.EF.Services;
@@ -19,8 +22,41 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
     public Task<bool> ExistByNameAsync(string name)
         => _shoppingList.ShoppingLists.AnyAsync(n => n.Name == name);
 
-    public Task<ShoppingListDto> GetShoppingListById(GetShoppingList query)
+    public async Task<ShoppingListDto?> GetShoppingListById(ShoppingListId id)//Expression<Func<ShoppingList, bool>> query)
     {
-        throw new NotImplementedException();
+        var result = _shoppingList
+            .Set<ShoppingList>()
+            .Include(x => x.Items)
+            .Where(x => x.Id == id)
+            .Select(x => new ShoppingListDto
+                {
+                    Name = x.Name,
+                    Id = x.Id,
+                    Items = x.Items.Select(pi => new ProductListDto
+                    {
+                        Name = pi.Name,
+                        Quantity = pi.Quantity,
+                        price = new PriceDto
+                        {
+                            amount = pi.Price.Amount,
+                            currency = pi.Price.Currency
+                        }
+                    }).ToList()
+                }
+            )
+            .FirstOrDefault();
+        
+        return result;
+    }
+
+    public Task<IEnumerable<ShoppingListDto>> GetShoppingListsByName(SearchShoppingList query)
+    {
+        // var result = _shoppingList.ShoppingLists.Include(x => x.Items)
+        //     .Where(x => x.Name == query.Name)
+        //     .Select(x => new E<ShoppingListDto>())
+        //     .AsNoTracking();
+        //
+        // return result;
+        return null;
     }
 }

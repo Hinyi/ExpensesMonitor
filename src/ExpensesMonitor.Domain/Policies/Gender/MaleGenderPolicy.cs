@@ -11,7 +11,7 @@ public class MaleGenderPolicy
         => new List<ProductList>
         {
             new("Beer", 22, new Price("USD", 12)),
-            new("Beer", 12, new Price("USD", 122)),
-            new("Beer", 44, new Price("USD", 1))
+            new("Bener", 12, new Price("USD", 122)),
+            new("Bemer", 44, new Price("USD", 1))
         };
 }
