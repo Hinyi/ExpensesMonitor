@@ -9,9 +9,10 @@ public class ShoppingList : AggregateRoot<ShoppingListId>
 {
     public ShoppingListId Id { get; private set; }
     public ShoppingListName Name { get; private set; }
-    public IReadOnlyCollection<ProductList> Items
+    public ICollection<ProductList> Items
     {
         get { return _items; }
+        set {}
     }
 
     private readonly LinkedList<ProductList> _items = new();

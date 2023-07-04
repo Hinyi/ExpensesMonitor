@@ -1,5 +1,6 @@
-﻿using ExpensesMonitor.Application.DTO;
-using ExpensesMonitor.Application.Services;
+﻿using ExpensesMonitor.Application.Services;
+using ExpensesMonitor.Domain.ValueObjects;
+using ExpensesMonitor.Shared.DTO;
 using ExpensesMonitor.Shared.Queries;
 
 namespace ExpensesMonitor.Application.Queries.GetShoppingListQuery;
@@ -13,9 +14,11 @@ internal sealed class GetShoppingListHandler : IQueryHandler<GetShoppingList, Sh
         _service = service;
     }
 
-    public Task<ShoppingListDto> HandleAsync(GetShoppingList query)
+    public async Task<ShoppingListDto> HandleAsync(GetShoppingList query)
     {
-        var result = _service.GetShoppingListById(query);
+        var id = new ShoppingListId(query.Id);
+        var result = await _service.GetShoppingListById(id);//x => x.Id == id);
+
         return result;
     }
 }
