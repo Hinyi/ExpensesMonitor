@@ -18,7 +18,7 @@ internal sealed class ShoppingListRepository : IShoppingListRepository
     }
 
     public async Task<ShoppingList> GetAsync(ShoppingListId id)
-        =>  _shoppingLists.ShoppingLists.Include("_items").SingleOrDefault(x => x.Id == id);
+        =>  _shoppingLists.ShoppingLists.Include("Items").SingleOrDefault(x => x.Id == id);
 
     public async Task AddAsync(ShoppingList shoppingList)
     {

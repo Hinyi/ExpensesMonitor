@@ -12,6 +12,7 @@ public static class Extensions
     {
         services.AddPostgres(configuration);
         services.AddQueries();
+        
 
         return services;
     }

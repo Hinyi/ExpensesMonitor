@@ -1,6 +1,12 @@
-﻿namespace ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
+﻿using ExpensesMonitor.Shared.DTO;
+using ExpensesMonitor.Shared.Queries;
 
-public class SearchShoppingListHandler
+namespace ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
+
+internal sealed class SearchShoppingListHandler : IQueryHandler<SearchShoppingList, IEnumerable<ShoppingListDto>>
 {
-    
+    public Task<IEnumerable<ShoppingListDto>> HandleAsync(SearchShoppingList query)
+    {
+        throw new NotImplementedException();
+    }
 }

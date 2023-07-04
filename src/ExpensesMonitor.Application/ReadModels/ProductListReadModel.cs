@@ -1,6 +1,4 @@
-﻿using ExpensesMonitor.Application.DTO;
-
-namespace ExpensesMonitor.Infrastructure.EF.Models;
+﻿namespace ExpensesMonitor.Infrastructure.EF.Models;
 
 internal class ProductListReadModel
 {

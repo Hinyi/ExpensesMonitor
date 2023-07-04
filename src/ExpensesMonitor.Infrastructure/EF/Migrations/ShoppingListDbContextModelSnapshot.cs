@@ -58,7 +58,7 @@ namespace ExpensesMonitor.Infrastructure.EF.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("ShoppingListId")
+                    b.Property<Guid>("ShoppingListId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -70,14 +70,18 @@ namespace ExpensesMonitor.Infrastructure.EF.Migrations
 
             modelBuilder.Entity("ExpensesMonitor.Domain.ValueObjects.ProductList", b =>
                 {
-                    b.HasOne("ExpensesMonitor.Domain.Entities.ShoppingList", null)
-                        .WithMany("_items")
-                        .HasForeignKey("ShoppingListId");
+                    b.HasOne("ExpensesMonitor.Domain.Entities.ShoppingList", "ShoppingList")
+                        .WithMany("Items")
+                        .HasForeignKey("ShoppingListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShoppingList");
                 });
 
             modelBuilder.Entity("ExpensesMonitor.Domain.Entities.ShoppingList", b =>
                 {
-                    b.Navigation("_items");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }
