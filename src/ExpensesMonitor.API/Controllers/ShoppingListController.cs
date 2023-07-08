@@ -23,8 +23,6 @@ public class ShoppingListController : BaseController
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<ShoppingListDto>> Get([FromRoute] GetShoppingList query)
     {
-        var a = 1;
-        var b = 1;
         var result = await _queryDispatcher.QueryAsync(query);
         return OkOrNotFound(result);
     }
@@ -39,12 +37,14 @@ public class ShoppingListController : BaseController
     public async Task<IActionResult> Post([FromBody] CreateShoppingListWithItems command)
     {
         await _commandDispatcher.DispatchAsync(command);
-        return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
+        // return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
+        return Ok();
     }
 
     [HttpPut("{shoppingListId}/items")]
     public async Task<IActionResult> Put([FromBody] AddProductsToList command)
     {
+        // command.shoppingListId=sh
         await _commandDispatcher.DispatchAsync(command);
         return Ok();
     }
