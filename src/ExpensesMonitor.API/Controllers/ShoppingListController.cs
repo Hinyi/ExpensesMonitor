@@ -44,7 +44,7 @@ public class ShoppingListController : BaseController
     [HttpPut("{shoppingListId}/items")]
     public async Task<IActionResult> Put([FromBody] AddProductsToList command)
     {
-        // command.shoppingListId=sh
+        // command.shoppingListId=shaa
         await _commandDispatcher.DispatchAsync(command);
         return Ok();
     }
