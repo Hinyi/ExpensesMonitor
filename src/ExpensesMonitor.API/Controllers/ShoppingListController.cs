@@ -5,6 +5,7 @@ using ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
 using ExpensesMonitor.Shared.Commands;
 using ExpensesMonitor.Shared.DTO;
 using ExpensesMonitor.Shared.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpensesMonitor.API.Controllers;
@@ -13,11 +14,13 @@ public class ShoppingListController : BaseController
 {
     private readonly ICommandDispatcher _commandDispatcher;
     private readonly IQueryDispatcher _queryDispatcher;
+    private readonly IMediator _mediator;
 
-    public ShoppingListController(ICommandDispatcher commandDispatcher, IQueryDispatcher queryDispatcher)
+    public ShoppingListController(ICommandDispatcher commandDispatcher, IQueryDispatcher queryDispatcher, IMediator mediator)
     {
         _commandDispatcher = commandDispatcher;
         _queryDispatcher = queryDispatcher;
+        _mediator = mediator;
     }
     
     [HttpGet("{id:guid}")]
@@ -36,9 +39,10 @@ public class ShoppingListController : BaseController
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] CreateShoppingListWithItems command)
     {
-        await _commandDispatcher.DispatchAsync(command);
-        // return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
-        return Ok();
+        //var result = await _commandDispatcher.DispatchAsync(command);
+        //return CreatedAtAction(nameof(Get), new {id = command.Id}, null);
+        var result = await _mediator.Send(command);
+        return Ok(result);
     }
 
     [HttpPut("{shoppingListId}/items")]

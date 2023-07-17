@@ -4,7 +4,7 @@ namespace ExpensesMonitor.Domain.ValueObjects;
 
 public record ShoppingListId //: IEquatable<ShoppingListId>
 {
-    public Guid Value { get;} 
+    public Guid Value { get; init; } 
 
     public ShoppingListId(Guid value)
     {
