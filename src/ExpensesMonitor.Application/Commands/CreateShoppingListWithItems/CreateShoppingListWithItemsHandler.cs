@@ -5,10 +5,11 @@ using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Shared.Commands;
+using MediatR;
 
 namespace ExpensesMonitor.Application.Commands.CreateShoppingListWithItems;
 
-public class CreateShoppingListWithItemsHandler : ICommandHandler<CreateShoppingListWithItems>
+public class CreateShoppingListWithItemsHandler : IRequestHandler<CreateShoppingListWithItems, ShoppingListResponse>
 {
     private readonly IShoppingListRepository _repository;
     private readonly IShoppingListFactory _factory;
@@ -22,7 +23,7 @@ public class CreateShoppingListWithItemsHandler : ICommandHandler<CreateShopping
         _readService = readService;
     }
 
-    public async Task HandleAsync(CreateShoppingListWithItems command)
+    public async Task<ShoppingListResponse> Handle(CreateShoppingListWithItems command, CancellationToken cancellationToken)
     {
         //var (id, name, occasionWriteModel, gender) = command;
         
@@ -33,10 +34,12 @@ public class CreateShoppingListWithItemsHandler : ICommandHandler<CreateShopping
 
         var occasion = new Occasion(command.Occasion.occasion);
 
-        // var shoppingList = new ShoppingList(new ShoppingListId(new Guid()), command.Name, occasion, command.gender);
-        
-        var shoppinglist = _factory.CreateWithDefaultItems(new ShoppingListId(new Guid()), command.Name, occasion, command.gender);
+        var shoppingListId = new ShoppingListId(Guid.NewGuid());
+
+        var shoppinglist = _factory.CreateWithDefaultItems(shoppingListId, command.Name, occasion, command.gender);
 
         await _repository.AddAsync(shoppinglist);
+
+        return new ShoppingListResponse(shoppingListId);
     }
 }

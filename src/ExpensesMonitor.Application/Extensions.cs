@@ -16,6 +16,8 @@ public static class Extensions
         services.AddQueries();
         services.AddSingleton<IShoppingListFactory, ShoppingListFactory>();
         // services.AddShared();
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssemblyContaining<ApplicationAssemblyReference>());
 
         services.Scan(x => x.FromAssemblies(typeof(IShoppingListPolicy).Assembly)
             .AddClasses(x => x.AssignableTo<IShoppingListPolicy>())
