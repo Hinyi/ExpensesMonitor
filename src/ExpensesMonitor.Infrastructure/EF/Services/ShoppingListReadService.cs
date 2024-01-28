@@ -49,6 +49,33 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
         return result;
     }
 
+    public async Task<ShoppingListDto?> GetShoppingListByName(ShoppingListName name)
+    {
+        var result = _shoppingList
+            .Set<ShoppingList>()
+            .Include(x => x.Items)
+            .Where(x => x.Name == name)
+            .Select(x => new ShoppingListDto
+                {
+                    Name = x.Name,
+                    Id = x.Id,
+                    Items = x.Items.Select(pi => new ProductListDto
+                    {
+                        Name = pi.Name,
+                        Quantity = pi.Quantity,
+                        price = new PriceDto
+                        {
+                            amount = pi.Price.Amount,
+                            currency = pi.Price.Currency
+                        }
+                    }).ToList()
+                }
+            )
+            .FirstOrDefault();
+        
+        return result;
+    }
+
     public Task<IEnumerable<ShoppingListDto>> GetShoppingListsByName(SearchShoppingList query)
     {
         // var result = _shoppingList.ShoppingLists.Include(x => x.Items)

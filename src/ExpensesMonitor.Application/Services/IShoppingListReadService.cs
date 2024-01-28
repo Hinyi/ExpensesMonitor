@@ -13,6 +13,6 @@ public interface IShoppingListReadService
 {
     Task<bool> ExistByNameAsync(string name);
     Task<ShoppingListDto?> GetShoppingListById(ShoppingListId id);//Expression<Func<ShoppingList, bool>> query);
-
+    Task<ShoppingListDto?> GetShoppingListByName(ShoppingListName name);
     Task<IEnumerable<ShoppingListDto>> GetShoppingListsByName(SearchShoppingList query);
 }
