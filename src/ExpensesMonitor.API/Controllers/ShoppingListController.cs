@@ -1,5 +1,6 @@
 ﻿using ExpensesMonitor.Application.Commands.AddProductsToList;
 using ExpensesMonitor.Application.Commands.CreateShoppingListWithItems;
+using ExpensesMonitor.Application.Queries.GetShoppingListByName;
 using ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 using ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
 using ExpensesMonitor.Shared.Commands;
@@ -23,8 +24,15 @@ public class ShoppingListController : BaseController
         _mediator = mediator;
     }
     
-    [HttpGet("{id:guid}")]
+    [HttpGet("{Id:guid}")]
     public async Task<ActionResult<ShoppingListDto>> Get([FromRoute] GetShoppingList query)
+    {
+        var result = await _queryDispatcher.QueryAsync(query);
+        return OkOrNotFound(result);
+    }
+    
+    [HttpGet("/ByName")]
+    public async Task<ActionResult<ShoppingListDto>> Get([FromQuery] GetShoppingListByName query)
     {
         var result = await _queryDispatcher.QueryAsync(query);
         return OkOrNotFound(result);
