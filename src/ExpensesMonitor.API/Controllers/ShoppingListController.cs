@@ -1,5 +1,6 @@
 ﻿using ExpensesMonitor.Application.Commands.AddProductsToList;
 using ExpensesMonitor.Application.Commands.CreateShoppingListWithItems;
+using ExpensesMonitor.Application.Queries.GetAllShoppingLists;
 using ExpensesMonitor.Application.Queries.GetShoppingListByName;
 using ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 using ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
@@ -59,5 +60,13 @@ public class ShoppingListController : BaseController
         // command.shoppingListId=shaa
         await _commandDispatcher.DispatchAsync(command);
         return Ok();
+    }
+
+    [HttpGet("/All")]
+    public async Task<ActionResult<IEnumerable<ShoppingListDto>>> Get()
+    {
+        var result = await _mediator.Send(new GetAllShoppingLists());
+
+        return Ok(result);
     }
 }

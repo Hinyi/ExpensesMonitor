@@ -20,6 +20,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontEndClient", builder =>
+        builder.AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:8080")
+            .WithOrigins("https://localhost:7047")
+    );
+});
 
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
@@ -33,6 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("FrontEndClient");
 app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();

@@ -1,6 +1,7 @@
 ﻿using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Config;
+using ExpensesMonitor.Shared.DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExpensesMonitor.Infrastructure.EF.Context;
