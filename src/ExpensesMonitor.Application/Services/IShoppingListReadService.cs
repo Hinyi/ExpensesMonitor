@@ -15,4 +15,5 @@ public interface IShoppingListReadService
     Task<ShoppingListDto?> GetShoppingListById(ShoppingListId id);//Expression<Func<ShoppingList, bool>> query);
     Task<ShoppingListDto?> GetShoppingListByName(ShoppingListName name);
     Task<IEnumerable<ShoppingListDto>> GetShoppingListsByName(SearchShoppingList query);
+    Task<IEnumerable<ShoppingListDto>> GetAllAsync();
 }

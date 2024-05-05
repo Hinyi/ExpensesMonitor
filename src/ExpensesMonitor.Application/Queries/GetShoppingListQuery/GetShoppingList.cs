@@ -6,4 +6,4 @@ namespace ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 public class GetShoppingList : IQuery<ShoppingListDto>
 {
     public Guid Id { get; set; }
-}
+} 

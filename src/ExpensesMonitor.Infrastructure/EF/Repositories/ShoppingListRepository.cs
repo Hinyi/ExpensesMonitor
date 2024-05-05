@@ -3,6 +3,7 @@ using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Domain.ValueObjects;
 using ExpensesMonitor.Infrastructure.EF.Context;
+using ExpensesMonitor.Shared.DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExpensesMonitor.Infrastructure.EF.Repositories;
@@ -37,4 +38,6 @@ internal sealed class ShoppingListRepository : IShoppingListRepository
         _shoppingLists.Remove(shoppingList);
         await _shoppingLists.SaveChangesAsync();
     }
+
+
 }

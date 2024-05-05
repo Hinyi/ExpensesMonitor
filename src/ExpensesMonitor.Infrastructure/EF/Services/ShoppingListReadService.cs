@@ -86,4 +86,18 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
         // return result;
         return null;
     }
+
+    public async Task<IEnumerable<ShoppingListDto>> GetAllAsync()
+    {
+        var dbQuery = _shoppingList.Set<ShoppingList>()
+            .Include(x => x.Items).AsQueryable();
+
+        Task<List<ShoppingListDto>> result = dbQuery.Select(x => x.AsDto())
+            .AsNoTracking()
+            .ToListAsync();
+
+        return await result;
+    } //=>
+    // _shoppingList.ShoppingLists.Include("Items").ToListAsync();
+    
 }
