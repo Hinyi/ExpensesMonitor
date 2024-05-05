@@ -4,11 +4,13 @@ using ExpensesMonitor.Application.Queries.GetAllShoppingLists;
 using ExpensesMonitor.Application.Queries.GetShoppingListByName;
 using ExpensesMonitor.Application.Queries.GetShoppingListQuery;
 using ExpensesMonitor.Application.Queries.SearchShoppingListQuery;
+using ExpensesMonitor.Infrastructure.EF.Models;
 using ExpensesMonitor.Shared.Commands;
 using ExpensesMonitor.Shared.DTO;
 using ExpensesMonitor.Shared.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PriceWriteModel = ExpensesMonitor.Application.Commands.AddProductsToList.PriceWriteModel;
 
 namespace ExpensesMonitor.API.Controllers;
 
@@ -39,12 +41,17 @@ public class ShoppingListController : BaseController
         return OkOrNotFound(result);
     }
     
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<ShoppingListDto>>> Get([FromQuery] SearchShoppingList query)
-    {
-        var result = await _queryDispatcher.QueryAsync(query);
-        return OkOrNotFound(result);
-    }
+    /// <summary>
+    /// Not implemented, instead I used mediatR
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    // [HttpGet]
+    // public async Task<ActionResult<IEnumerable<ShoppingListDto>>> Get([FromQuery] SearchShoppingList query)
+    // {
+    //     var result = await _queryDispatcher.QueryAsync(query);
+    //     return OkOrNotFound(result);
+    // }
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] CreateShoppingListWithItems command)
     {
@@ -54,11 +61,13 @@ public class ShoppingListController : BaseController
         return Ok(result);
     }
 
-    [HttpPut("{shoppingListId}/items")]
-    public async Task<IActionResult> Put([FromBody] AddProductsToList command)
+    [HttpPut("{id}/items")]
+    public async Task<IActionResult> Put(Guid id,[FromBody] AddNewProductToListReadModel command)
     {
-        // command.shoppingListId=shaa
-        await _commandDispatcher.DispatchAsync(command);
+        // command.shoppingListId=shaa AddProductsToList
+        var product = new AddProductsToList(id, command.name, command.Quantity,
+            new PriceWriteModel(command.price.currency,command.price.amount));
+        await _commandDispatcher.DispatchAsync(product);
         return Ok();
     }
 

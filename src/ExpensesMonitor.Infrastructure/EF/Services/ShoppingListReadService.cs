@@ -28,22 +28,7 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
             .Set<ShoppingList>()
             .Include(x => x.Items)
             .Where(x => x.Id == id)
-            .Select(x => new ShoppingListDto
-                {
-                    Name = x.Name,
-                    Id = x.Id,
-                    Items = x.Items.Select(pi => new ProductListDto
-                    {
-                        Name = pi.Name,
-                        Quantity = pi.Quantity,
-                        price = new PriceDto
-                        {
-                            amount = pi.Price.Amount,
-                            currency = pi.Price.Currency
-                        }
-                    }).ToList()
-                }
-            )
+            .Select(x => x.AsDto())
             .FirstOrDefault();
         
         return result;
@@ -55,23 +40,30 @@ internal sealed class ShoppingListReadService : IShoppingListReadService
             .Set<ShoppingList>()
             .Include(x => x.Items)
             .Where(x => x.Name == name)
-            .Select(x => new ShoppingListDto
-                {
-                    Name = x.Name,
-                    Id = x.Id,
-                    Items = x.Items.Select(pi => new ProductListDto
-                    {
-                        Name = pi.Name,
-                        Quantity = pi.Quantity,
-                        price = new PriceDto
-                        {
-                            amount = pi.Price.Amount,
-                            currency = pi.Price.Currency
-                        }
-                    }).ToList()
-                }
-            )
+            .Select(x => x.AsDto())
+            .AsNoTracking()
             .FirstOrDefault();
+        // var result = _shoppingList
+        //     .Set<ShoppingList>()
+        //     .Include(x => x.Items)
+        //     .Where(x => x.Name == name)
+        //     .Select(x => new ShoppingListDto
+        //         {
+        //             Name = x.Name,
+        //             Id = x.Id,
+        //             Items = x.Items.Select(pi => new ProductListDto
+        //             {
+        //                 Name = pi.Name,
+        //                 Quantity = pi.Quantity,
+        //                 price = new PriceDto
+        //                 {
+        //                     amount = pi.Price.Amount,
+        //                     currency = pi.Price.Currency
+        //                 }
+        //             }).ToList()
+        //         }
+        //     )
+        //     .FirstOrDefault();
         
         return result;
     }
