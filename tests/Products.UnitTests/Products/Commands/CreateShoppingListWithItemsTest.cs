@@ -50,7 +50,7 @@ public class CreateShoppingListWithItemsTest
             x => x.ExistByNameAsync(
                 It.IsAny<string>()))
             .ReturnsAsync(false);
-        
+         
         var handler = new CreateShoppingListWithItemsHandler(_repository.Object, _factory.Object, _readService.Object);
         //Act
         var result = await handler.Handle(command, default);
