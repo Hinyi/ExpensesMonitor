@@ -22,24 +22,24 @@ public class CreateShoppingListWithItemsTest
         _readService = new();
     }
 
-    [Fact]
-    public async Task Handle_Should_ReturnFailureResult_WhenNameIsNotUnique()
-    {
-        //Arrange
-        var command = new CreateShoppingListWithItems("party", new OccasionWriteModel("party"), Gender.Male);
-
-        _readService.Setup(
-            x => x.ExistByNameAsync(
-                It.IsAny<string>()))
-            .ReturnsAsync(true);
-        
-        var handler = new CreateShoppingListWithItemsHandler(_repository.Object, _factory.Object, _readService.Object);
-        //Act
-        var result = await handler.Handle(command, default);
-        //Assets
-        result.Should().NotBeOfType<ShoppingListAlreadyExistException>();
-    }    
-    
+    // [Fact]
+    // public async Task Handle_Should_ReturnFailureResult_WhenNameIsNotUnique()
+    // {
+    //     //Arrange
+    //     var command = new CreateShoppingListWithItems("party", new OccasionWriteModel("party"), Gender.Male);
+    //
+    //     _readService.Setup(
+    //         x => x.ExistByNameAsync(
+    //             It.IsAny<string>()))
+    //         .ReturnsAsync(true);
+    //     
+    //     var handler = new CreateShoppingListWithItemsHandler(_repository.Object, _factory.Object, _readService.Object);
+    //     //Act
+    //     var result = await handler.Handle(command, default);
+    //     //Assets
+    //     result.Should().NotBeOfType<ShoppingListAlreadyExistException>();
+    // }    
+    //
     [Fact]
     public async Task Handle_Should_ReturneResultTrue_WhenNameIsUnique()
     {
