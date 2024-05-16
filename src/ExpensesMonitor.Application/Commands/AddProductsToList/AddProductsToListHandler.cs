@@ -1,4 +1,5 @@
-﻿using ExpensesMonitor.Domain;
+﻿using ExpensesMonitor.Application.Exceptions;
+using ExpensesMonitor.Domain;
 using ExpensesMonitor.Domain.Entities;
 using ExpensesMonitor.Domain.Repositories;
 using ExpensesMonitor.Domain.ValueObjects;
@@ -19,8 +20,10 @@ public class AddProductsToListHandler : ICommandHandler<AddProductsToList>
     {
         var shoppingList = await _repository.GetAsync(command.shoppingListId);
 
-        if (shoppingList is null){}
-            //throw new Exception();
+        if (shoppingList is null)
+        {
+            throw new ShoppingListIsEmptyException("Empty shopping list");
+        }
 
         var price = new Price(command.price.currency, command.price.amount);
         var shoppingItem = new ProductList(command.name, command.Quantity, price);
@@ -28,5 +31,6 @@ public class AddProductsToListHandler : ICommandHandler<AddProductsToList>
         shoppingList.AddItem(shoppingItem);
 
         await _repository.UpdateAsync(shoppingList);
+        
     }
 }

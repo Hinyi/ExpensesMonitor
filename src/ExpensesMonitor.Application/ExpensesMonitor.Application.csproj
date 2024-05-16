@@ -15,5 +15,11 @@
       <Folder Include="Commands\RemoveShoppingList\" />
       <Folder Include="Commands\UpdateProduct\" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+            <_Parameter1>Products.UnitTests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
 
 </Project>
