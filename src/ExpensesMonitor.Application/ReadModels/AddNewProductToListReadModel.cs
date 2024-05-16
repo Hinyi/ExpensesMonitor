@@ -4,6 +4,7 @@ public record AddNewProductToListReadModel(
     string name,
     int Quantity,
     PriceWriteModel price);
+
 public record PriceWriteModel(
-    string currency, 
+    string currency,
     decimal amount);
