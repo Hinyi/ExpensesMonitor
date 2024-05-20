@@ -15,4 +15,5 @@ Stack
 -CQRS  
 -MediatR  
 -Serilog  
--Swagger  
+-Swagger    
+-Docker
